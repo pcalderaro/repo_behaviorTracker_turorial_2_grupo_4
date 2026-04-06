@@ -53,6 +53,7 @@ def cargar_datos (archivo):
     
 
     '''
+    diccio_datos= {}
     registros=[]
     
     archivo=open(archivo, "r", encoding="utf-8")
@@ -63,9 +64,23 @@ def cargar_datos (archivo):
         if linea != "": 
             try: 
                 registro=parsear_linea(linea)
-                registros.append(registro)
+                
             except ValueError: 
                 print("Error en la linea", linea)
+            for dato in registro:
+                id_participante= registro[0]
+                fecha= registro[1]
+                app= registro[2]
+                cantidad_uso= registro[3]
+                tiempo_uso= registro[4]
+                diccio_datos["ID"] = id_participante
+                diccio_datos["fecha"] = fecha
+                diccio_datos["app"] = app
+                diccio_datos["cantidad de uso"] =cantidad_uso
+                diccio_datos["tiempo de uso"] = tiempo_uso
+                
+                
+            registros.append(diccio_datos)
     archivo.close()
     return registros 
     
