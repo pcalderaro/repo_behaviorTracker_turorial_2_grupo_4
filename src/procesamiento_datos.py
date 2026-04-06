@@ -1,18 +1,21 @@
-def filtrar_por_participante(datos: list, id_participante; int):
+def filtrar_por_participante(datos: list, id_participante: int):
     """
-    Filtra los registros que pertenecen a un participante especifico.
+    Devuelve dos listas con los datos de un participante:
+    - tiempos de uso
+    - cantidades de uso
 
-    Parametros:
-    datos : lista de diccionarios
-    id_participante: int
+    datos: lista de diccionarios con los registros
+    id_participante: id a filtrar
 
-    Retorna:
-    lista de diccionarios filtrados
+    return: (tiempos, cantidades)
     """
-    resultado = [ ]
-    
+
+    tiempos = []
+    cantidades = []
+
     for registro in datos:
-        if registro ["id_participante"] == id_participante:
-            resultado.append(registro)
-    
-    return resultado
+        if registro["id_participante"] == id_participante:
+            tiempos.append(registro["tiempo"])
+            cantidades.append(registro["cantidad"])
+
+    return tiempos, cantidades
