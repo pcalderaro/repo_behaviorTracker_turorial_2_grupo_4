@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Mar 27 15:59:05 2026
-
-@author: valentinaentralagmail..com
-"""
+from scr.validacion_datos import validar_registro
 def parsear_linea(linea): 
     '''
     Convierte una linea de texto del archivo en un registro con los tipos de datos correspondientes. 
@@ -25,7 +19,7 @@ def parsear_linea(linea):
    ValueError
        Si la linea no tiene exactamnte 5 campos. 
     '''
-    datos=linea.spli(",")
+    datos = linea.spli(",")
     
     if len(datos) != 5: 
         raise ValueError ("La linea no tiene 5 campos")
@@ -35,8 +29,10 @@ def parsear_linea(linea):
     app= datos[2]
     cantidad_uso= int(datos[3])
     tiempo_uso= float(datos[4])
+    registro = [id_participante,fecha,app,cantidad_uso,tiempo_uso]
+    registro_valido =validar_registro(registro)
     
-    return registro
+    return registro_valido
 
 def cargar_datos (archivo): 
     '''
@@ -71,4 +67,5 @@ def cargar_datos (archivo):
             except ValueError: 
                 print("Error en la linea", linea)
     archivo.close()
+    return registros 
     
