@@ -1,4 +1,4 @@
-def filtrar_por_participante(datos: list, id_participante: int):
+def filtrar_por_participante(datos, id_participante):
     """
     Devuelve dos listas con los datos de un participante:
     - tiempos de uso
