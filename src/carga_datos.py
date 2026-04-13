@@ -80,7 +80,7 @@ def cargar_datos (archivo):
                 diccio_datos["tiempo de uso"] = tiempo_uso
                 
                 
-            registros.append(diccio_datos)
+                registros.append(diccio_datos)
     archivo.close()
     return registros 
     
