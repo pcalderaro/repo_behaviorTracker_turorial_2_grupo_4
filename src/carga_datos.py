@@ -19,7 +19,7 @@ def parsear_linea(linea):
    ValueError
        Si la linea no tiene exactamnte 5 campos. 
     '''
-    datos = linea.spli(",")
+    datos = linea.split(",")
     
     if len(datos) != 5: 
         raise ValueError ("La linea no tiene 5 campos")
