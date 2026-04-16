@@ -9,12 +9,13 @@ def filtrar_por_participante(datos, id_participante):
         
     return: (tiempos, cantidades)
         
-    ValueError:
-        Si los datos no son válidos o la lista está vacía.
+    Raises:
+        TypeError: si datos no es lista o los registros no son dict
+        ValueError: si la lista está vacía
     """
 
 if type(datos) != list:
-    raise ValueError ("No es lista")
+    raise TypeError ("No es lista")
 
 if len(datos) == []:
     raise ValueError ("La lista esta vacia")
