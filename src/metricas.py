@@ -11,7 +11,7 @@ def calcular_tiempo_total(lista_tiempos):
     -------
     float.
     el tiempo total de uso (la suma de todos los elementos de la lista)
-    exept: intexError = la lista esta vacia
+    Raises: intexError = la lista esta vacia
 
     '''
     
@@ -40,7 +40,7 @@ def calcular_promedio_uso(lista_usos):
     Returns
     -------
     promedio : float.
-    exept:indexError = la lsita esta vacia
+    raises: indexError = la lsita esta vacia
     '''
     sumar = None
     try:
