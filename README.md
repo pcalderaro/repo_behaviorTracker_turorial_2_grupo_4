@@ -9,19 +9,18 @@ por ultimo organiza los datos a medir de los participantes (tiempo y cantidad de
 este proyecto esta contruido por: Pilar Calderaro, Valentina Entrala, Camila Iglesias Y Uma Rodriguez Videla
 
 Objetivo
-
 Desarrollar un sistema que permita:
-● leer y estructurar datos de uso digital
-● representar comportamiento a lo largo del tiempo
-● calcular métricas básicas de uso
+-  leer y estructurar datos de uso digital
+-  representar comportamiento a lo largo del tiempo
+-  Calcular métricas básicas de uso
 
 Estrucutura de los datos
 
-● id_participante: identificador del participante
-● fecha: día de registro
-● app: nombre de la aplicación
-● cantidad_uso: cantidad de veces que se abrió la app
-● tiempo_uso: tiempo total de uso
+-  id_participante: identificador del participante
+-  fecha: día de registro
+-  app: nombre de la aplicación
+-  cantidad_uso: cantidad de veces que se abrió la app
+-  tiempo_uso: tiempo total de uso
 
 Métricas a calcular
 1.  Tiempo total de uso → intensidad de uso
