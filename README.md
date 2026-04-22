@@ -9,12 +9,14 @@ por ultimo organiza los datos a medir de los participantes (tiempo y cantidad de
 este proyecto esta contruido por: Pilar Calderaro, Valentina Entrala, Camila Iglesias Y Uma Rodriguez Videla
 
 Objetivo
+
 Desarrollar un sistema que permita:
 ● leer y estructurar datos de uso digital
 ● representar comportamiento a lo largo del tiempo
 ● calcular métricas básicas de uso
 
 Estrucutura de los datos
+
 ● id_participante: identificador del participante
 ● fecha: día de registro
 ● app: nombre de la aplicación
