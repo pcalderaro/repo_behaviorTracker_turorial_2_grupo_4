@@ -12,7 +12,12 @@ registros = cargar_datos (ruta) #dato = lista de listas
 for registro in registros:
     di = registro["ID"]
     for di in range(len(registros)):
-        tiempos,cantidades = filtrar_por_participante(registro, di)
+        try:
+          tiempos,cantidades = filtrar_por_participante(registro, di)
+        except TypeError as e:
+            print (e)
+        except ValueError as e:
+            print(e)
 try:        
     resultado_tiempo_total = calcular_tiempo_total(tiempos)
     resultado_uso_promedio = calcular_promedio_uso(cantidades)
