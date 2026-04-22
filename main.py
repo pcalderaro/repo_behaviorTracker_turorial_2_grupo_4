@@ -2,6 +2,7 @@ from src.carga_datos import cargar_datos
 from src.procesamiento_datos import filtrar_por_participante
 from src.metricas import calcular_tiempo_total
 from src.metricas import calcular_promedio_uso
+# ruta = "datos/BehaviorTracker_mock_data_error(nuemero).csv"
 ruta = "datos/BehaviorTracker_mock_data.csv"
 
 registros = cargar_datos (ruta) #dato = lista de listas
