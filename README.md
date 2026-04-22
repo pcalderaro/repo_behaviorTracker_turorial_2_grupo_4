@@ -25,3 +25,8 @@ Estrucutura de los datos
 Métricas a calcular
 1.  Tiempo total de uso → intensidad de uso
 2.  Promedio de uso → comportamiento típico
+
+Implementacion de objjetos de la funcion cargar_datos()
+  Se define una clase Registro para representar cada linea del archivo. 
+  Los atributos son : id_participante, fecha, app, cantidad_uso, tiempo_uso. 
+  Los metodos son: __init__ que es el que incializa los obejtos y
