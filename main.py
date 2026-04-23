@@ -5,14 +5,15 @@ from src.metricas import calcular_promedio_uso
 # ruta = "datos/BehaviorTracker_mock_data_error(nuemero).csv"
 ruta = "datos/BehaviorTracker_mock_data.csv"
 
-registros = cargar_datos (ruta) #dato = lista de diccionarios
+registros = cargar_datos (ruta) #dato = lista de listas
 
 #dentro de la anterior se verifican los datos
 
-for id_participante, datos in registros.items():
-    for datos in range(len(registros)):
+for registro in registros:
+    di = registro["ID"]
+    for di in range(len(registros)):
         try:
-          tiempos,cantidades = filtrar_por_participante(datos, id_participante)
+          tiempos,cantidades = filtrar_por_participante(registro, di)
         except TypeError as e:
             print (e)
         except ValueError as e:
