@@ -24,7 +24,7 @@ def calcular_tiempo_total(lista_tiempos):
                 sumatoria += numero 
         return sumatoria
     except IndexError():
-        return 'la lista esta vacia'
+        print ('la lista esta vacia')
 
 
 def calcular_promedio_uso(lista_usos):
@@ -49,8 +49,8 @@ def calcular_promedio_uso(lista_usos):
                 sumar = usos
             else:
                 sumar += usos
-    except IndexError():
-        return 'la lista esta vacia'
+    except IndexError:
+        print ('la lista esta vacia')
     else:
         promedio = sumar / len(lista_usos)
         return promedio
