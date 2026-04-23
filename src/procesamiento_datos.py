@@ -17,7 +17,7 @@ def filtrar_por_participante(datos, id_participante):
     if type(datos) != list:
         raise TypeError ("No es lista")
 
-    if len(datos) == []:
+    if len(datos) == 0:
         raise ValueError ("La lista esta vacia")
     
     tiempos = []
