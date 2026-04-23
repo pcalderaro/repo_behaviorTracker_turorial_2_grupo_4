@@ -1,7 +1,7 @@
 from src.validacion_datos import validar_registro
 def parsear_linea(linea): 
     '''
-    Convierte una linea de texto del archivo en un registro con los tipos de datos correspondientes. 
+    Convierte una linea de texto del archivo en un registro con los tipos de datos correspondientes.  
 
     Parameters
     ----------
