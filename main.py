@@ -21,10 +21,9 @@ for registro in registros:
 try:        
     resultado_tiempo_total = calcular_tiempo_total(tiempos)
     resultado_uso_promedio = calcular_promedio_uso(cantidades)
-except ValueError as e:
+except IndexError as e:
     print(e)
-except KeyError as e:
-    print (e)
+
 
 print(f"su tiempo total es de : {resultado_tiempo_total} y su cantidad promedio es de: {resultado_uso_promedio} ")
 
