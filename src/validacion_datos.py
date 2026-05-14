@@ -21,8 +21,12 @@ def validar_registro(registro):
         lista_datos_validados = []
         contador = 0
 
-        while contador < len(registro):
-            dato = registro[contador]
+       for i in range(cantidad):
+            datos[id_participante] = {
+                    "fecha": fecha,
+                    "app": app,
+                    "tiempo": tiempo
+                                    }
 
             try:
                 if es_dato_valido(dato) == True:
