@@ -9,8 +9,8 @@ registros = cargar_datos (ruta) #dato = lista de dicionarios
 
 id_buscado = input("Ingrese el ID del participante que desea filtrar: ")
 
-for registro in registros:
-   if registro["ID"] == id_buscado:
+if id_participante in registros:
+    participante = registros[id_participante]
        
         try:
           tiempos,cantidades = filtrar_por_participante(registro, id_buscado)
