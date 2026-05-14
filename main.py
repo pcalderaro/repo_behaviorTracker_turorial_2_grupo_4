@@ -7,29 +7,28 @@ ruta = "datos/BehaviorTracker_mock_data.csv"
 
 registros = cargar_datos (ruta) #dato = lista de dicionarios
 
-#dentro de la anterior se verifican los datos
+id_buscado = input("Ingrese el ID del participante que desea filtrar: ")
 
 for registro in registros:
-    di = registro["ID"]
-    for di in range(len(registros)):
+   if registro["ID"] == id_buscado:
+       
         try:
-          tiempos,cantidades = filtrar_por_participante(registro, di)
+          tiempos,cantidades = filtrar_por_participante(registro, id_buscado)
         except TypeError as e:
             print (e)
         except ValueError as e:
             print(e)
-try:        
-    resultado_tiempo_total = calcular_tiempo_total(tiempos)
-    resultado_uso_promedio = calcular_promedio_uso(cantidades)
-except IndexError as e:
-    print(e)
-
-
-print(f"su tiempo total es de : {resultado_tiempo_total} y su cantidad promedio es de: {resultado_uso_promedio} ")
-
+            
+            
+if tiempos and cantidades:            
+    try:        
+        resultado_tiempo_total = calcular_tiempo_total(tiempos)
+        resultado_uso_promedio = calcular_promedio_uso(cantidades)
+    except IndexError as e:
+        print(e)
+    else:
+        print(f"su tiempo total es de : {resultado_tiempo_total} y su cantidad promedio es de: {resultado_uso_promedio} ")
+else:
+    print("No se encontró ningún participante con ese ID.")
     
-# sabemos que hay un error en el valor de registros, todo el codigo esta hecho en base a que registros sea una lista de diccionarios
-# pero ahora carga de datos tiene que ser un diccionario de diccionarios?
-# eso es lo que entendimos de las correcciones y somos concientes de que el codigo sigue con errores especificamente de ese tipo, mas no sabemos como solucionarlos.
-
 
