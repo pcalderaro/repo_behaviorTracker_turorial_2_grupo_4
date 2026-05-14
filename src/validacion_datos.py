@@ -21,7 +21,7 @@ def validar_registro(registro):
         lista_datos_validados = []
         contador = 0
 
-       for i in range(cantidad):
+        for i in range(cantidad):
             datos[id_participante] = {
                     "fecha": fecha,
                     "app": app,
