@@ -12,18 +12,18 @@ def filtrar_por_participante(datos, id_participante):
             TypeError: si datos no es lista o los registros no son dict
             ValueError: si la lista está vacia
     """
-if type(datos) != list:
-    raise TypeError("No es lista")
+    if type(datos) != list:
+        raise TypeError("No es lista")
 
-if len (datos) == 0:
-    raise ValueError ("La lista esta vacia")
+    if len (datos) == 0:
+        raise ValueError ("La lista esta vacia")
 
-tiempos = []
-cantidades = []
+    tiempos = []
+    cantidades = []
 
-for registro in datos:
-    if registro["ID"] == id_participante:
-        tiempos append (registro["tiempo"])
-        cantidades append (registro["cantidad"])
+    for registro in datos:
+        if registro["ID"] == id_participante:
+            tiempos.append (registro["tiempo"])
+            cantidades.append (registro["cantidad"])
 
-return tiempos, cantidades
+    return tiempos, cantidades
