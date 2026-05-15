@@ -30,3 +30,6 @@ Implementacion de objjetos de la funcion cargar_datos()
   Se define una clase Registro para representar cada linea del archivo. 
   Los atributos son : id_participante, fecha, app, cantidad_uso, tiempo_uso. 
   Los metodos son: __init__ que es el que incializa los obejtos y procesar_datos(self). Crea una lista con los atributos que va a usar: cantidad_uso y tiempo_uso. 
+
+  Implementacion de API: 
+  
