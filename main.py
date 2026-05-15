@@ -9,15 +9,15 @@ registros = cargar_datos (ruta) #dato = lista de dicionarios
 
 id_buscado = input("Ingrese el ID del participante que desea filtrar: ")
 
-if id_participante in registros:
-    participante = registros[id_participante]
+if id_buscado in registros:
+    participante = registros[id_buscado]
        
-        try:
-          tiempos,cantidades = filtrar_por_participante(registro, id_buscado)
-        except TypeError as e:
-            print (e)
-        except ValueError as e:
-            print(e)
+    try:
+         tiempos,cantidades = filtrar_por_participante(registros, id_buscado)
+    except TypeError as e:
+        print (e)
+    except ValueError as e:
+        print(e)
             
             
 if tiempos and cantidades:            
