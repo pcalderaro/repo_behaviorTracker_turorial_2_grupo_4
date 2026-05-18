@@ -31,5 +31,11 @@ Implementacion de objjetos de la funcion cargar_datos()
   Los atributos son : id_participante, fecha, app, cantidad_uso, tiempo_uso. 
   Los metodos son: __init__ que es el que incializa los obejtos y procesar_datos(self). Crea una lista con los atributos que va a usar: cantidad_uso y tiempo_uso. 
 
-  Implementacion de API: 
+  Implementacion de liberia Pandas:
+  En este proyecto, la libreria Pandas, remplazaria la lectura manuela linea por liena y la construccion de diccioanrios por una carga directo del archivo a un DataFrame, que es una tabla con filas y columnas nombrada. 
+    Funciones a modificar: 
+    - cargar_datos()
+    Lo que va a hacer es detectar las columnas y almacenar todo en un DataFrame en memoria. 
+  
+  
   
