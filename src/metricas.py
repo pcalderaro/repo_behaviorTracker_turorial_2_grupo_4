@@ -16,15 +16,15 @@ def calcular_tiempo_total(lista_tiempos):
     '''
     
     sumatoria = None
-    try:
+    if lista_tiempos == []:
+        raise IndexError(f'la lista {lista_tiempos} esta vacia')
+    else: 
         for numero in lista_tiempos:
             if sumatoria == None:
-               sumatoria = numero 
+                  sumatoria = numero 
             else: 
                 sumatoria += numero 
-        return sumatoria
-    except IndexError():
-        print (f'la lista {lista_tiempos} esta vacia')
+                return sumatoria
 
 
 def calcular_promedio_uso(lista_usos):
@@ -43,15 +43,14 @@ def calcular_promedio_uso(lista_usos):
     raises: indexError = la lsita esta vacia
     '''
     sumar = None
-    try:
+    if lista_usos == []:
+       raise IndexError(f'la lista {lista_usos} esta vacia')
+    else:
         for usos in lista_usos:
             if sumar == None:
                 sumar = usos
             else:
                 sumar += usos
-    except IndexError:
-        print (f'la lista {lista_usos} esta vacia')
-    else:
         promedio = sumar / len(lista_usos)
         return promedio
         

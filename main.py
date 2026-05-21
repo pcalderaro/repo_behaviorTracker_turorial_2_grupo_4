@@ -18,17 +18,13 @@ if id_buscado in registros:
         print (e)
     except ValueError as e:
         print(e)
-            
-            
-if tiempos and cantidades:            
-    try:        
-        resultado_tiempo_total = calcular_tiempo_total(tiempos)
-        resultado_uso_promedio = calcular_promedio_uso(cantidades)
-    except IndexError as e:
-        print(e)
     else:
-        print(f"su tiempo total es de : {resultado_tiempo_total} y su cantidad promedio es de: {resultado_uso_promedio} ")
-else:
-    print("No se encontró ningún participante con ese ID.")
-    
+        try:        
+            resultado_tiempo_total = calcular_tiempo_total(tiempos)
+            resultado_uso_promedio = calcular_promedio_uso(cantidades)
+        except IndexError as e:
+            print(e)
+        else:
+            print(f"su tiempo total es de : {resultado_tiempo_total} y su cantidad promedio es de: {resultado_uso_promedio} ")
+
 
