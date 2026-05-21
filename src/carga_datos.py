@@ -85,6 +85,7 @@ def cargar_datos (archivo):
             
             except ValueError: 
                 print("Error en la linea", linea)
+# No hacen falta los try, cambiar por raise
             
     archivo.close()
     return registros 
