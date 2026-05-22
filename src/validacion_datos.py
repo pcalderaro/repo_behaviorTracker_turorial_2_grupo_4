@@ -14,9 +14,8 @@ def validar_registro(registro):
         Una vez recorrida la lista, devuelve una nueva lista solo con los datos váldios.
 
     '''
-    try:
-        if len(registro) == 0:
-            return "la lista está vacía"
+    if len(registro) == 0:
+        return "la lista está vacía"
         
         lista_datos_validados = []
         contador = 0
@@ -27,19 +26,17 @@ def validar_registro(registro):
                     "app": app,
                     "tiempo": tiempo
                                     }
-
-            try:
-                if es_dato_valido(dato) == True:
-                    lista_datos_validados.append(dato)
-            except Exception as e:
-                print("Error al validar un dato:", e)
-
-            contador += 1
+            if es_dato_valido(dato) == True:
+                lista_datos_validados.append(dato)
+                contador += 1
+            else:
+                contador += 1
+                raise ValueError("Error al validar un dato:")
 
         return lista_datos_validados
 
-    except Exception as e:
-        print("Error en la función:", e)
+    else:
+        raise Exception("Error en la función:")
         return None
 
 
