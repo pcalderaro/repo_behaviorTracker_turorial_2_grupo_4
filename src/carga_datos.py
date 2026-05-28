@@ -14,7 +14,7 @@ def parsear_linea(linea):
    Lista con los datos convertidos
    [id_participante, fecha, app, cantidad_uso, tiempo_uso]
    
-   Lanza
+   Raise
    ------
    ValueError
        Si la linea no tiene exactamnte 5 campos. 
@@ -51,10 +51,19 @@ def cargar_datos (archivo):
     -------
    dict
        Diccionario con los datos agrupados por id. 
+
+    Raises
+    --------
+    ValueError 
+        Si el nombre del archivo esta vacio. 
+    FileNotFound
+        Si el archivo no existe. 
     
 
     '''
     registros={}
+    if archivo == " ": 
+        raise ValueError ("El nomre del archivo no puede estar vacio")
     
     archivo=open(archivo, "r", encoding="utf-8")
     
@@ -62,31 +71,30 @@ def cargar_datos (archivo):
         linea=linea.strip()
         
         if linea != "": 
-            try: 
-                registro=parsear_linea(linea)
+            
+            registro=parsear_linea(linea)
 
-                id_participante= registro[0]
-                fecha= registro[1]
-                app= registro[2]
-                cantidad_uso= registro[3]
-                tiempo_uso= registro[4]
+            id_participante= registro[0]
+            fecha= registro[1]
+            app= registro[2]
+            cantidad_uso= registro[3]
+            tiempo_uso= registro[4]
 
-                if id_participante not in registros: 
-                    registros[id_participante]={"ID": id_participante,
-                        "fecha": [],
-                        "app": [],
-                        "cantidad de uso": [],
-                        "tiempo de uso": []}
+            if id_participante not in registros: 
+                registros[id_participante]={"ID": id_participante,
+                    "fecha": [],
+                    "app": [],
+                    "cantidad de uso": [],
+                    "tiempo de uso": []}
               
                 registros[id_participante]["fecha"].append(fecha)
                 registros[id_participante]["app"].append(app)
                 registros[id_participante]["cantidad de uso"].append(cantidad_uso)
                 registros[id_participante]["tiempo de uso"].append(tiempo_uso)
             
-            except ValueError: 
-                print("Error en la linea", linea)
-# No hacen falta los try, cambiar por raise
+
             
     archivo.close()
     return registros 
     
+#registro=parsear_linea(linea), si hay algo invalido, parsear_linea() lanza ValueError y automaticamnte se corta cargar_datos(). 
