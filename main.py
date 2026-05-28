@@ -20,11 +20,8 @@ if id_buscado in registros:
         print(e)
     else:
         try:        
-
             resultado_tiempo_total = calcular_tiempo_total(tiempos)
             resultado_uso_promedio = calcular_promedio_uso(cantidades)
-
-
         except IndexError as e:
             print(e)
         else:
