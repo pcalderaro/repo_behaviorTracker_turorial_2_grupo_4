@@ -46,4 +46,33 @@ def cargar_datos (archivo):
     )
     df = df.dropna()
     #para eliminar las filas vacias
-    return df.dropna()
+
+    filas_validas = []
+
+    for i in range(len(df)):
+
+        registro = [
+            int(df.iloc[i,0]),
+            df.iloc[i,1],
+            df.iloc[i,2],
+            int(df.iloc[i,3]),
+            float(df.iloc[i,4])
+        ]
+
+        try:
+
+            for dato in registro:
+                validar_registro(registro, dato)
+
+            filas_validas.append(registro)
+
+        except ValueError:
+            print("Registro inválido:", registro)
+
+    df_final = pd.DataFrame(
+        filas_validas,
+        columns=["id_participante", "fecha", "app", "cantidad_uso", "tiempo_uso"]
+    )
+
+    return df_final
+  
