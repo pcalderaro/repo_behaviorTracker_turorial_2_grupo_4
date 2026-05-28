@@ -30,7 +30,8 @@ def parsear_linea(linea):
     cantidad_uso= int(datos[3])
     tiempo_uso= float(datos[4])
     registro = [id_participante,fecha,app,cantidad_uso,tiempo_uso]
-    registro_valido =validar_registro(registro)
+    for dato in registro:
+        registro_valido = validar_registro(registro, dato)
     
     return registro_valido
 
