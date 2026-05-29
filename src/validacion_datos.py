@@ -47,7 +47,7 @@ def validar_registro(registro, dato):
         return "la lista está vacía"
     
         lista_datos_validados = []
-        contador = 0
+        contador = 0 #revisen para qué está el contador
     else:
 
         if es_dato_valido(dato) == True:
