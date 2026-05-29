@@ -1,29 +1,29 @@
+import pandas as pd
+
 def filtrar_por_participante(datos, id_participante):
     """
     Devuelve dos listas con los datos de un participante:
         - tiempos de uso
-﻿﻿        - cantidades de uso
-    datos: lista de diccionarios con los registros
+        - cantidades de uso
+    datos: DataFrame de pandas con los registros
     id_participante: id a filtrar
 
     return: (tiempos, cantidades)
-    
+   
     Raises:
-            TypeError: si datos no es lista o los registros no son dict
-            ValueError: si la lista está vacia
+            TypeError: si datos no es un DataFrame de pandas
+            ValueError: si el DataFrame está vacio
     """
-    if type(datos) != list:
+ 
+    if type(datos) != pd.DataFrame:
         raise TypeError("No es lista")
 
-    if len (datos) == 0:
-        raise ValueError ("La lista esta vacia")
+    if datos.shape[0] == 0:
+        raise ValueError("La lista esta vacia")
 
-    tiempos = []
-    cantidades = []
+    datos_filtrados = datos.loc[datos["ID"] == id_participante]
 
-    for registro in datos:
-        if registro["ID"] == id_participante:
-            tiempos.append (registro["tiempo"])
-            cantidades.append (registro["cantidad"])
+    tiempos = datos_filtrados["tiempo"].tolist()
+    cantidades = datos_filtrados["cantidad"].tolist()
 
     return tiempos, cantidades
