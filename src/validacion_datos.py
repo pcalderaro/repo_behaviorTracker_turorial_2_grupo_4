@@ -1,4 +1,3 @@
-
 def es_dato_valido(dato):
     '''
 
@@ -22,8 +21,8 @@ def es_dato_valido(dato):
         return False
         raise ValueError("Error al validar el dato")
     elif dato == "":
-        return False
         raise ValueError("Error al validar el dato")
+        return False
     else:
         return True
 
@@ -47,14 +46,11 @@ def validar_registro(registro, dato):
         return "la lista está vacía"
     
         lista_datos_validados = []
-        contador = 0 #revisen para qué está el contador
     else:
 
         if es_dato_valido(dato) == True:
             lista_datos_validados.append(dato)
-            contador += 1
         else:
-            contador += 1
             raise ValueError("Error al validar un dato:")
 
     return lista_datos_validados
