@@ -1,4 +1,4 @@
-import pandas as pd #no se si tengo que poner esto aca o no
+#import pandas  #no se si tengo que poner esto aca o no
 from src.carga_datos import cargar_datos
 from src.procesamiento_datos import filtrar_por_participante
 from src.metricas import calcular_tiempo_total
