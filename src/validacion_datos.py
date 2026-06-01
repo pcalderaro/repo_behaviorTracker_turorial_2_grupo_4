@@ -19,9 +19,7 @@ def es_dato_valido(dato):
     '''
     if dato is None:
         return False
-        raise ValueError("Error al validar el dato")
     elif dato == "":
-        raise ValueError("Error al validar el dato")
         return False
     else:
         return True
