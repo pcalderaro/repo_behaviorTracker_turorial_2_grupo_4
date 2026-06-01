@@ -40,14 +40,15 @@ def validar_registro(registro, dato):
         Una vez recorrida la lista, devuelve una nueva lista solo con los datos váldios.
 
     '''
+    dat_val = es_dato_valido(dato)
+    lista_datos_validados = []
     if len(registro) == 0:
         return "la lista está vacía"
     
-        lista_datos_validados = []
     else:
 
-        if es_dato_valido(dato) == True:
-            lista_datos_validados.append(dato)
+        if dat_val == True:
+            lista_datos_validados.append(dat_val)
         else:
             raise ValueError("Error al validar un dato:")
 
