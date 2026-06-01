@@ -62,9 +62,9 @@ def cargar_datos (archivo):
         try:
 
             for dato in registro:
-                validar_registro(registro, dato)
+                list_val = validar_registro(registro, dato)
 
-            filas_validas.append(registro)
+            filas_validas.append(list_val)
 
         except ValueError:
             print("Registro inválido:", registro)
