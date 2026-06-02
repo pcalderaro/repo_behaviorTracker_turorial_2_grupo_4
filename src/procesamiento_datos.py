@@ -21,9 +21,9 @@ def filtrar_por_participante(datos, id_participante):
     if datos.shape[0] == 0:
         raise ValueError("La lista esta vacia")
 
-    datos_filtrados = datos.loc[datos["ID"] == id_participante]
+    datos_filtrados = datos.loc[datos["id_participante"] == id_participante]
 
-    tiempos = datos_filtrados["tiempo"].tolist()
-    cantidades = datos_filtrados["cantidad"].tolist()
+    tiempos = datos_filtrados["tiempo_uso"].tolist()
+    cantidades = datos_filtrados["cantidad_uso"].tolist()
 
     return tiempos, cantidades
