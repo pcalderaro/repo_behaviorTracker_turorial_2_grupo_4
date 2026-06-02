@@ -1,4 +1,4 @@
-import matplotlib as plt
+import matplotlib.pyplot as plt
 def graficar_metricas(tiempos, cantidades, id_participante):
     
     # Gráfico 1 - Tiempos de uso
