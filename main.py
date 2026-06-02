@@ -21,7 +21,7 @@ if id_buscado in registros["id_participante"].values:
    participante = registros.loc[registros["id_participante"] == id_buscado]
    
    try:
-     tiempos,cantidades = filtrar_por_participante(registros, participante)
+     tiempos,cantidades = filtrar_por_participante(registros, id_buscado)
    except TypeError as e:
        print (e)
    except ValueError as e:
