@@ -1,4 +1,4 @@
-#import pandas  #no se si tengo que poner esto aca o no
+# sabemos que no tira el link, pero ya no sabemos que mas hacer
 from src.carga_datos import cargar_datos
 from src.procesamiento_datos import filtrar_por_participante
 from src.metricas import calcular_tiempo_total
